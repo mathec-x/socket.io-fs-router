@@ -1,0 +1,40 @@
+{
+  "name": "socket.io-fs-router",
+  "version": "1.0.0",
+  "description": "File routing framework like api serverless for socket.io Next Generation",
+  "author": "Matheus Correa",
+  "repository": "mathec-x/socket.io-fs",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "scripts": {
+    "demo": "NODE_ENV=development nodemon ./demo/index",
+    "dev": "ts-node-dev --respawn --watch src --ignore-watch node_modules --no-notify src/index.ts",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs"
+  },
+  "keywords": [
+    "socket.io",
+    "serverless",
+    "framework",
+    "next",
+    "api",
+    "file",
+    "router",
+    "typescript"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "socket.io": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "@types/socket.io": "^3.0.2",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  },
+  "files": [
+    "lib"
+  ]
+}
