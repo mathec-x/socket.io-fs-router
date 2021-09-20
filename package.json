@@ -1,6 +1,6 @@
 {
   "name": "socket.io-fs-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "File routing framework like api serverless for socket.io Next Generation",
   "author": "Matheus Correa",
   "repository": "mathec-x/socket.io-fs",

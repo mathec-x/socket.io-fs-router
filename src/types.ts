@@ -6,8 +6,8 @@ export interface IReadRecursive {
   path: string
 }
 
-export interface Handler {
-  (...args: any[]) : void;
+export interface Handler<T = any> {
+  (...args: T[]) : void;
   socket?: Socket;
   io?: Namespace
 }
