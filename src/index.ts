@@ -24,7 +24,7 @@ export const ioRouter = (io: Namespace) => {
 /**
  * @description receive this as socket in handler
  */
-export function fsRouter (this: Server ,socket: Socket, next: Function) {
+export function socketRouter (this: Server ,socket: Socket, next: Function) {
     for (const { event, handler } of routes) {
         socket.on(event, handler);
     }

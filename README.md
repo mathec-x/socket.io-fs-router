@@ -9,7 +9,7 @@ npm install socket.io-fs-router
 ```
 ## usage
 ``` js
-    io.use(fsRouter); // access io in your custom middleware extend socket
+    io.use(socketRouter); // access io in your custom middleware extend socket
     // or
     io.use(ioRouter(io)); // this = { socket: Socket, io: Namespace }
     io.on('connection', handleConnection)
