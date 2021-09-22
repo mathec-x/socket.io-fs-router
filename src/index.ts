@@ -6,6 +6,11 @@ import readRoutes from "./readRoutes";
 const files = readRecursive(REQUIRE_MAIN_FILE+'/socket')
 const routes = readRoutes(files)
 
+/**
+ * @description 
+ * all handlers extends {socket, io} on this
+ * the namespace must be called in the function
+ */
 export const ioRouter = (io: Namespace) => {
     return (socket: Socket, next: any) => {
         for (const { event, handler } of routes) {
@@ -16,12 +21,14 @@ export const ioRouter = (io: Namespace) => {
         next()
     }
 };
-
-export function ioApi (this: Server ,socket: Socket, next: any) {
+/**
+ * @description receive this as socket in handler
+ */
+export function fsRouter (this: Server ,socket: Socket, next: Function) {
     for (const { event, handler } of routes) {
         socket.on(event, handler);
     }
     next()
 };
 
-export type { Handler } from './types'
+export type { Handler, Router } from './types'

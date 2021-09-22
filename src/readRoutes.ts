@@ -17,7 +17,7 @@ export default function readRoutes(files: IReadRecursive[]){
   for (const file of files) {
     const parse = pt.parse(file.relative)
 
-    if (![".js", ".ts", ".ws"].includes(parse.ext.toLocaleLowerCase()) || parse.name.startsWith('_') || parse.dir.startsWith('/_') || parse.dir.includes('.d.ts'))
+    if (![".js", ".ts", ".ws"].includes(parse.ext.toLocaleLowerCase()) || parse.name.startsWith('_') || parse.dir.startsWith('/_') || parse.name.endsWith('.d'))
       continue
 
     const dir = parse.dir === "/" ? "" : parse.dir.substring(1).replace("/", ":")

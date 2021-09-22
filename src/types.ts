@@ -7,9 +7,11 @@ export interface IReadRecursive {
 }
 
 export interface Handler<T = any> {
-  (...args: T[]) : void;
-  socket?: Socket;
-  io?: Namespace
+  (this: Socket, ...args: T[]) : void;
+}
+
+export interface Router<T = any> {
+  (this: {socket: Socket, io: Namespace}, ...args: T[]) : void;
 }
 
 export interface IEvent {
